@@ -23,20 +23,22 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-2"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-36 space-y-2"
           >
-            <NavLink to="/" className={({isActive}) => isActive? 'text-[#17BE0A] text-lg font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC] text-lg font-medium'}>Home</NavLink>
+            <NavLink to="/" className={({isActive}) => isActive? 'text-[#17BE0A] font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC]  font-medium'}>Home</NavLink>
 
-            <NavLink to="/listed-books" className={({isActive}) => isActive? 'text-[#17BE0A] text-lg font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC] text-lg font-medium'}>Listed Books</NavLink>
+            <NavLink to="/listed-books" className={({isActive}) => isActive? 'text-[#17BE0A]  font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC]  font-medium'}>Listed Books</NavLink>
 
-            <NavLink to="/pages-to-read" className={({isActive}) => isActive? 'text-[#17BE0A] text-lg font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC] text-lg font-medium'}>Pages to Read</NavLink>
+            <NavLink to="/pages-to-read" className={({isActive}) => isActive? 'text-[#17BE0A]  font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC]  font-medium'}>Pages to Read</NavLink>
 
-            <NavLink to="/about" className={({isActive}) => isActive? 'text-[#17BE0A] text-lg font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC] text-lg font-medium'}>About</NavLink>
+            <NavLink to="/about" className={({isActive}) => isActive? 'text-[#17BE0A]  font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC]  font-medium'}>About</NavLink>
 
-            <NavLink to="/contact" className={({isActive}) => isActive? 'text-[#17BE0A] text-lg font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC] text-lg font-medium'}>Contact</NavLink>
+            <NavLink to="/contact" className={({isActive}) => isActive? 'text-[#17BE0A]  font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC]  font-medium'}>Contact</NavLink>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+
+        <NavLink to="/" className="btn btn-ghost text-2xl lg:text-3xl font-bold text-[#131313] ">Online Books</NavLink>
+
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 items-center flex gap-5">
@@ -52,8 +54,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex gap-3">
-        <button className="py-1 lg:py-2 px-2 lg:px-5 text-white lg:text-lg font-semibold bg-[#17BE0A] rounded-md">Sing In</button>
-        <button className="py-1 lg:py-2 px-2 lg:px-5 text-white lg:text-lg font-semibold bg-[#59C6D2] rounded-md">Sing Up</button>
+        <button className="btn py-1 lg:py-2 px-2 lg:px-5 text-white lg:text-lg font-semibold bg-[#17BE0A] rounded-md">Sing In</button>
+        <button className=" btn py-1 lg:py-2 px-2 lg:px-5 text-white lg:text-lg font-semibold bg-[#59C6D2] rounded-md">Sing Up</button>
       </div>
     </div>
   );
