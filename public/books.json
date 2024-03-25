@@ -47,7 +47,7 @@
       "totalPages": 224,
       "rating": 4.2,
       "category": "Fiction",
-      "tags": ["Coming-of-Age", "American Literature"],
+      "tags": ["Coming-of-Age", "Literature"],
       "publisher": "Little, Brown and Company",
       "yearOfPublishing": 1951
     },
@@ -76,6 +76,45 @@
       "tags": ["Adventure", "Middle-Earth"],
       "publisher": "George Allen & Unwin",
       "yearOfPublishing": 1937
+    },
+    {
+      "bookId": 7,
+      "bookName": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "image": "the_lord_of_the_rings.jpg",
+      "review": "Epic fantasy trilogy following the journey to destroy the One Ring.",
+      "totalPages": 1178,
+      "rating": 4.9,
+      "category": "Fantasy",
+      "tags": ["Epic Fantasy", "Adventure"],
+      "publisher": "George Allen & Unwin",
+      "yearOfPublishing": 1954
+    },
+    {
+      "bookId": 8,
+      "bookName": "The Alchemist",
+      "author": "Paulo Coelho",
+      "image": "the_alchemist.jpg",
+      "review": "A philosophical novel about the journey to find one's personal legend.",
+      "totalPages": 197,
+      "rating": 4.4,
+      "category": "Fiction",
+      "tags": ["Philosophical Fiction", "Adventure"],
+      "publisher": "HarperCollins",
+      "yearOfPublishing": 1988
+    },
+    {
+      "bookId": 9,
+      "bookName": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "image": "harry_potter_and_the_sorcerers_stone.jpg",
+      "review": "The first book in the magical Harry Potter series.",
+      "totalPages": 320,
+      "rating": 4.7,
+      "category": "Fantasy",
+      "tags": ["Magic", "Children's Literature"],
+      "publisher": "Bloomsbury",
+      "yearOfPublishing": 1997
     }
   ]
   
