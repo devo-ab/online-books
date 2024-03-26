@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { FaRegStar } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const BookCard = ({ book }) => {
   const {bookName, author, image, rating, category, tags} = book;
 
   return (
-    <div className="card w-96 mx-auto bg-base-100 border border-[#13131326]">
+    <NavLink to="/books-details" className="card w-96 mx-auto bg-base-100 border border-[#13131326]">
       <figure className="px-10 pt-10">
         <img
           src={image}
@@ -31,7 +32,7 @@ const BookCard = ({ book }) => {
             <FaRegStar className="text-[#131313CC]" />
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 
