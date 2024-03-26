@@ -1,11 +1,10 @@
 import { IoIosArrowDown } from "react-icons/io";
-import { NavLink, Outlet } from "react-router-dom";
-import WishlistBooks from "../WishlistBooks/WishlistBooks";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
   return (
     <div className="mt-4 lg:mt-10 px-2 lg:px-0">
-      <h1 className="text-2xl lg:text-3xl text-[#131313] font-bold text-center bg-[#1313130D] p-10 w-fit lg:w-[1170px] mx-auto rounded-xl">
+      <h1 className="text-2xl lg:text-3xl text-[#131313] font-bold text-center bg-[#1313130D] p-5 lg:p-10 w-fit lg:w-[1170px] mx-auto rounded-xl">
         Books
       </h1>
 
@@ -26,11 +25,14 @@ const ListedBooks = () => {
         </details>
       </div>
 
-      <div>
-        <NavLink to="/listed-books/reads-books" className="text-[#131313CC] border-t border-[#1E1E1E]">Read Books</NavLink>
+      <div className="lg:w-[1170px] mx-auto mt-3 lg:mt-10">
+      <div className="flex">
+        <NavLink to="/listed-books/reads-books" className={({isActive}) => isActive?'text-[#131313CC] border-t border-l border-r font-semibold px-4 py-2 rounded-md border-[#13131380]' : 'text-[#13131380] border-b border-[#13131380] px-4 py-2 '}>Read Books</NavLink>
+
+        <NavLink to="/listed-books/wishlist-books" className={({isActive}) => isActive?'text-[#131313CC] border-t border-l border-r font-semibold px-4 py-2 rounded-md border-[#13131380]' : 'text-[#13131380] flex-1 border-b border-[#13131380] px-4 py-2 '}>Wishlist Books</NavLink><hr />
+
+        <div className="text-[#13131380] flex-1 border-b border-[#13131380] py-2"></div>
       </div>
-      <div>
-      <NavLink to="/listed-books/wishlist-books" className="text-[#13131380]">Wishlist Books</NavLink>
       </div>
       <Outlet></Outlet>
     </div>
