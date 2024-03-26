@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div className="text-center">
-      <div className="flex flex-col lg:flex-row justify-between p-4 lg:p-32 bg-[#1313130D] mt-10 lg:w-[1170px] rounded-xl mx-auto">
+      <div className="flex flex-col lg:flex-row justify-between p-4 lg:p-32 bg-[#1313130D] mt-10 lg:w-[1170px] rounded-xl mx-auto items-center">
         <div>
           <h1 className="text-[#131313] text-2xl lg:text-5xl font-bold lg:leading-[84px]">
             Books to freshen <br />

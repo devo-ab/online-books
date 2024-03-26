@@ -3,10 +3,10 @@ import { FaRegStar } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const BookCard = ({ book }) => {
-  const {bookName, author, image, rating, category, tags} = book;
+  const {bookId, bookName, author, image, rating, category, tags} = book;
 
   return (
-    <NavLink to="/books-details" className="card w-96 mx-auto bg-base-100 border border-[#13131326]">
+    <NavLink to={`/books-details/${bookId}`} className="card w-96 mx-auto bg-base-100 border border-[#13131326]">
       <figure className="px-10 pt-10">
         <img
           src={image}
