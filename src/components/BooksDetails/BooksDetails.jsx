@@ -1,10 +1,97 @@
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const BooksDetails = () => {
   const books = useLoaderData();
   const { bookId } = useParams();
   const bookIdInt = parseInt(bookId);
   const book = books.find((book) => book.bookId === bookIdInt);
+
+  // read books local storage start
+  const handleRead = () => {
+    saveReadBooks(bookIdInt);
+  };
+
+
+  const getSaveReadBooks = () => {
+    const storedReadBooks = localStorage.getItem('read-books');
+
+    if(storedReadBooks){
+      return JSON.parse(storedReadBooks);
+    }
+    else{
+      return [];
+    }
+  };
+
+  const saveReadBooks = (id) => {
+    const storedReadBooks = getSaveReadBooks();
+
+    const exists = storedReadBooks.find(readBooksId => readBooksId === id)
+
+    if(!exists){
+      storedReadBooks.push(id);
+      localStorage.setItem('read-books', JSON.stringify(storedReadBooks));
+      toast("Added This Book In Read Books");
+    }
+    else{
+      toast("Already added in the Read Books");
+    }
+  };
+  // read books local storage end
+
+
+  // wishlist local storage start
+  const handleWishList = () => {
+    saveWishlist(bookIdInt);
+  };
+
+  const getSaveBooks = () => {
+    const storedReadBooks = localStorage.getItem('read-books');
+
+    if(storedReadBooks){
+      return JSON.parse(storedReadBooks);
+    }
+    else{
+      return [];
+    }
+  };
+
+  const getSaveWishlist = () => {
+    const storedWishList = localStorage.getItem('wishlist-books');
+
+    if(storedWishList){
+      return JSON.parse(storedWishList);
+    }
+    else{
+      return [];
+    }
+  };
+
+  const saveWishlist = (id) => {
+    const storedWishlist = getSaveWishlist();
+    const alreadyStoredReadBooks = getSaveBooks();
+
+    const exists = storedWishlist.find(wishlistId => wishlistId === id);
+    const alreadyExists = alreadyStoredReadBooks.find(readBooksId => readBooksId === id)
+
+
+    if(alreadyExists){
+      toast("Already added this book in read list")
+    }
+    else if (exists){
+      toast("Already added in Wishlist");
+    }
+    else if(!alreadyExists){
+      storedWishlist.push(id);
+      localStorage.setItem('wishlist-books', JSON.stringify(storedWishlist));
+      toast("Added this book in Wishlist");
+    }
+    
+  };
+  // wishlist local storage end
 
   return (
     <div className="flex flex-col lg:flex-row lg:gap-8 items-center mt-5 lg:mt-10 lg:w-[1170px] mx-auto">
@@ -53,16 +140,19 @@ const BooksDetails = () => {
         </div>
 
         <div className="mt-2 lg:mt-5 flex gap-3">
-          <NavLink className="inline-flex items-center justify-center px-4 py-2 text-lg font-semibold leading-6 text-[#131313] whitespace-no-wrap bg-white border border-[#1313134C] rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
+          <NavLink onClick={handleRead} className="inline-flex items-center justify-center px-4 py-2 text-lg font-semibold leading-6 text-[#131313] whitespace-no-wrap bg-white border border-[#1313134C] rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
             Read
           </NavLink>
+          
 
-          <NavLink className="inline-flex items-center justify-center px-4 py-2 text-lg font-semibold leading-6 text-white whitespace-no-wrap bg-[#50B1C9] rounded-md shadow-sm hover:bg-gray-50 hover:text-black focus:outline-none focus:shadow-none">
+          <NavLink onClick={handleWishList} className="inline-flex items-center justify-center px-4 py-2 text-lg font-semibold leading-6 text-white whitespace-no-wrap bg-[#50B1C9] rounded-md shadow-sm hover:bg-gray-50 hover:text-black focus:outline-none focus:shadow-none">
             Wishlist
           </NavLink>
         </div>
       </div>
+      <ToastContainer />
     </div>
+    
   );
 };
 

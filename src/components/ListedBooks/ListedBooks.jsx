@@ -1,5 +1,5 @@
 import { IoIosArrowDown } from "react-icons/io";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import {NavLink, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
   return (
