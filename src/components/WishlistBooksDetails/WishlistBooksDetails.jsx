@@ -2,10 +2,11 @@ import { IoLocationOutline } from "react-icons/io5";
 import { GoPeople } from "react-icons/go";
 import { SlNotebook } from "react-icons/sl";
 import PropTypes from 'prop-types';
+import { NavLink } from "react-router-dom";
 
 const WishlistBooksDetails = ({books}) => {
 
-    const {bookName, image, author, tags, yearOfPublishing, publisher, totalPages, category, rating} = books;
+    const {bookId, bookName, image, author, tags, yearOfPublishing, publisher, totalPages, category, rating} = books;
 
     return (
         <div className="mt-4 lg:mt-10 flex flex-col lg:flex-row gap-12 lg:w-[1170px] mx-auto border border-[#13131326] rounded-lg p-4">
@@ -32,7 +33,7 @@ const WishlistBooksDetails = ({books}) => {
                 <div className="flex gap-3 mt-1 lg:mt-3">
                     <p className="text-[#328EFF] py-2 rounded-full px-5 bg-[#328EFF26]">Category: {category}</p>
                     <p className="text-[#FFAC33] py-2 rounded-full px-5 bg-[#FFAC3338]">Rating: {rating}</p>
-                    <p className="bg-[#23BE0A] text-white font-medium py-2 rounded-full px-5">View Details</p>
+                    <NavLink to={`/listed-books/wishlist-books/${bookId}`} className="bg-[#23BE0A] text-white font-medium py-2 rounded-full px-5">View Details</NavLink>
                 </div>
             </div>
         </div>
