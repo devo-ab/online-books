@@ -1,4 +1,4 @@
-import { NavLink, useLoaderData, useParams } from "react-router-dom";
+import {useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -8,12 +8,18 @@ const BooksDetails = () => {
   const { bookId } = useParams();
   const bookIdInt = parseInt(bookId);
   const book = books.find((book) => book.bookId === bookIdInt);
+  // console.log(books)
+  //  if(books){
+    
+  //  }
 
+
+   
   // read books local storage start
   const handleRead = () => {
+    console.log(bookIdInt)
     saveReadBooks(bookIdInt);
   };
-
 
   const getSaveReadBooks = () => {
     const storedReadBooks = localStorage.getItem('read-books');
@@ -35,6 +41,7 @@ const BooksDetails = () => {
       storedReadBooks.push(id);
       localStorage.setItem('read-books', JSON.stringify(storedReadBooks));
       toast("Added This Book In Read Books");
+      return;
     }
     else{
       toast("Already added in the Read Books");
@@ -140,14 +147,14 @@ const BooksDetails = () => {
         </div>
 
         <div className="mt-2 lg:mt-5 flex gap-3">
-          <NavLink onClick={handleRead} className="inline-flex items-center justify-center px-4 py-2 text-lg font-semibold leading-6 text-[#131313] whitespace-no-wrap bg-white border border-[#1313134C] rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
+          <button onClick={handleRead} className="inline-flex items-center justify-center px-4 py-2 text-lg font-semibold leading-6 text-[#131313] whitespace-no-wrap bg-white border border-[#1313134C] rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
             Read
-          </NavLink>
+          </button>
           
 
-          <NavLink onClick={handleWishList} className="inline-flex items-center justify-center px-4 py-2 text-lg font-semibold leading-6 text-white whitespace-no-wrap bg-[#50B1C9] rounded-md shadow-sm hover:bg-gray-50 hover:text-black focus:outline-none focus:shadow-none">
+          <button onClick={handleWishList} className="inline-flex items-center justify-center px-4 py-2 text-lg font-semibold leading-6 text-white whitespace-no-wrap bg-[#50B1C9] rounded-md shadow-sm hover:bg-gray-50 hover:text-black focus:outline-none focus:shadow-none">
             Wishlist
-          </NavLink>
+          </button>
         </div>
       </div>
       <ToastContainer />

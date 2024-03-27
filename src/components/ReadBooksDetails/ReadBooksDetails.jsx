@@ -1,6 +1,8 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { GoPeople } from "react-icons/go";
 import { SlNotebook } from "react-icons/sl";
+import PropTypes from 'prop-types';
+import { NavLink } from "react-router-dom";
 
 const ReadBooksDetails = ({books}) => {
 
@@ -36,6 +38,10 @@ const ReadBooksDetails = ({books}) => {
             </div>
         </div>
     );
+};
+
+ReadBooksDetails.propTypes = {
+    books: PropTypes.object.isRequired
 };
 
 export default ReadBooksDetails;

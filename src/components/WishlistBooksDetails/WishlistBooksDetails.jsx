@@ -1,6 +1,7 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { GoPeople } from "react-icons/go";
 import { SlNotebook } from "react-icons/sl";
+import PropTypes from 'prop-types';
 
 const WishlistBooksDetails = ({books}) => {
 
@@ -36,6 +37,10 @@ const WishlistBooksDetails = ({books}) => {
             </div>
         </div>
     );
+};
+
+WishlistBooksDetails.propTypes = {
+    books: PropTypes.object.isRequired
 };
 
 export default WishlistBooksDetails;

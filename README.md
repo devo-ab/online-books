@@ -1,8 +1,11 @@
-# React + Vite
+# Online Books
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live link: https://online-books0.netlify.app/
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.It's the online books store,here all books are free to read.
+2.You can add read books which already completely you read in one single place(Listed Books => Read Books).
+3.You can store which one you read letter.(Listed Books => WishList)
+4.You find all books in home.
+5.This is responsive for mobile device,so you can read from mobile device.
+6.Data store in Local Storage.So if you uninstall or clear browser data,you will loss the read books data and wishlist data.
+7.You can give feedback or contact us from contact section 

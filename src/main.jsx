@@ -22,12 +22,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('../public/books.json')
+        loader: () => fetch('../books.json')
       },
       {
         path:"/books-details/:bookId",
         element:<BooksDetails></BooksDetails>,
-        loader: () => fetch('../public/books.json')
+        loader: () => fetch('../books.json')
       },
       {
         path:"/listed-books",
@@ -36,12 +36,12 @@ const router = createBrowserRouter([
           {
             path:"/listed-books/reads-books",
             element:<ReadBooks></ReadBooks>,
-            loader: () => fetch('../public/books.json')
+            loader: () => fetch('../books.json')
           },
           {
             path:"/listed-books/wishlist-books",
             element:<WishlistBooks></WishlistBooks>,
-            loader: () => fetch('../public/books.json')
+            loader: () => fetch('../books.json')
           }
         ]
       },
