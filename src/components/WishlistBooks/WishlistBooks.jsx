@@ -27,7 +27,7 @@ const WishlistBooks = () => {
             setWishlistBook(wishlistBook);
             // console.log(readBooks)
         }
-    }, []);
+    }, [books]);
 
     return (
         <div>

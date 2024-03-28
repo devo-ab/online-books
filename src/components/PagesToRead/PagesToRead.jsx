@@ -1,5 +1,13 @@
-import React from "react";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+import { getStoredReadBooks } from "../../localstorage";
+import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+// import { useLoaderData } from "react-router-dom";
+// import { useEffect, useState } from "react";
+// import { getStoredReadBooks } from "../../localstorage";
+
+// const books = useLoaderData();
+// console.log(books)
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
@@ -64,12 +72,44 @@ const TriangleBar = (props) => {
 };
 
 const PagesToRead = () => {
+
+  const books = useLoaderData();
+  // console.log(books)
+
+  const savedReadBooks = getStoredReadBooks();
+  // console.log(savedReadBooks);
+
+  const [booksRead, setBooksRead] = useState([]);
+  // console.log(booksRead)
+  const {bookName, totalPages} = booksRead;
+
+  useEffect( () => {
+    const savedBooksIds = getStoredReadBooks();
+
+    if(books.length > 0){
+
+        const readBooks = [];
+
+        for (const id of savedBooksIds){
+            const book = books.find(book => book.bookId === id);
+            // console.log(book)
+            if(book){
+                readBooks.push(book)
+            }
+        }
+        setBooksRead(readBooks);
+        // console.log(readBooks)
+    }
+}, [books]);
+
   return (
-    <div className="mt-3 lg:mt-10 w-fit mx-auto">
+    <div>
+      {/* for large device start */}
+      <div className="mt-3 lg:mt-10 w-fit mx-auto hidden lg:block">
       <BarChart
-        width={500}
+        width={1500}
         height={300}
-        data={data}
+        data={booksRead}
         margin={{
           top: 20,
           right: 30,
@@ -78,14 +118,41 @@ const PagesToRead = () => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="bookName" />
         <YAxis />
-        <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: "top" }}>
+        <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: "top" }}>
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % 20]} />
           ))}
         </Bar>
       </BarChart>
+    </div>
+    {/* for large device end */}
+
+    {/* for mobile start */}
+    <div className="mt-3 lg:mt-10 w-fit mx-auto lg:hidden block">
+      <BarChart
+        width={450}
+        height={300}
+        data={booksRead}
+        margin={{
+          top: 20,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="bookName" />
+        <YAxis />
+        <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: "top" }}>
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+          ))}
+        </Bar>
+      </BarChart>
+    </div>
+    {/* for mobile device end */}
     </div>
   );
 };

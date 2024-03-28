@@ -27,7 +27,7 @@ const ReadBooks = () => {
             setBooksRead(readBooks);
             // console.log(readBooks)
         }
-    }, []);
+    }, [books]);
 
     return (
         <div>
