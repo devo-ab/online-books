@@ -27,7 +27,7 @@ const ListedBooks = () => {
 
       <div className="lg:w-[1170px] mx-auto mt-3 lg:mt-10">
       <div className="flex">
-        <NavLink to="/listed-books/reads-books" className={({isActive}) => isActive?'text-[#131313CC] border-t border-l border-r font-semibold px-4 py-2 rounded-md border-[#13131380]' : 'text-[#13131380] border-b border-[#13131380] px-4 py-2 '}>Read Books</NavLink>
+        <NavLink to="/listed-books/reads-books"  className={({isActive}) => isActive?'text-[#131313CC] border-t border-l border-r font-semibold px-4 py-2 rounded-md border-[#13131380]' : 'text-[#13131380] border-b border-[#13131380] px-4 py-2 '}>Read Books</NavLink>
 
         <NavLink to="/listed-books/wishlist-books" className={({isActive}) => isActive?'text-[#131313CC] border-t border-l border-r font-semibold px-4 py-2 rounded-md border-[#13131380]' : 'text-[#13131380] flex-1 border-b border-[#13131380] px-4 py-2 '}>Wishlist Books</NavLink><hr />
 

@@ -33,7 +33,7 @@ const Navbar = () => {
 
             <NavLink to="/about" className={({isActive}) => isActive? 'text-[#17BE0A]  font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC]  font-medium'}>About</NavLink>
 
-            <NavLink to="/contact" className={({isActive}) => isActive? 'text-[#17BE0A]  font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC]  font-medium'}>Contact</NavLink>
+            <NavLink to="/contact" className={({isActive}) => isActive? 'text-[#17BE0A]  font-semibold border border-[#17BE0A] rounded-md px-3 py-1 text-center' : 'text-[#131313CC]  font-medium'}>Feedback</NavLink>
           </ul>
         </div>
 
@@ -50,7 +50,7 @@ const Navbar = () => {
 
           <NavLink to="/about" className={({isActive}) => isActive? 'text-[#17BE0A] text-lg font-semibold border border-[#17BE0A] rounded-md px-5 py-2' : 'text-[#131313CC] text-lg font-medium'}>About</NavLink>
 
-          <NavLink to="/contact" className={({isActive}) => isActive? 'text-[#17BE0A] text-lg font-semibold border border-[#17BE0A] rounded-md px-5 py-2' : 'text-[#131313CC] text-lg font-medium'}>Contact</NavLink>
+          <NavLink to="/contact" className={({isActive}) => isActive? 'text-[#17BE0A] text-lg font-semibold border border-[#17BE0A] rounded-md px-5 py-2' : 'text-[#131313CC] text-lg font-medium'}>Feedback</NavLink>
         </ul>
       </div>
       <div className="navbar-end flex gap-3">

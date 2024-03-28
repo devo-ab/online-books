@@ -2,12 +2,6 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
 import { getStoredReadBooks } from "../../localstorage";
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import { useLoaderData } from "react-router-dom";
-// import { useEffect, useState } from "react";
-// import { getStoredReadBooks } from "../../localstorage";
-
-// const books = useLoaderData();
-// console.log(books)
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
