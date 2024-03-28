@@ -6,7 +6,7 @@ const Contact = () => {
 			<h2 className="text-4xl font-bold leading-tight lg:text-5xl">Let's talk!</h2>
 			<div className="dark:text-gray-600">Send your feedback or suggestion to improve your services</div>
 		</div>
-		<img src="../../../public/contact.png" alt="" className="p-4 h-52 md:h-64" />
+		<img src="contact.png" alt="" className="p-4 h-52 md:h-64" />
 	</div>
 	<form className="space-y-6">
 		<div>
